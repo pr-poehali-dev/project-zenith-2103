@@ -149,20 +149,23 @@ export default function Index() {
       <GrainOverlay />
 
       <div
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ contain: "strict" }}
+        className={`fixed inset-0 z-0 overflow-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover"
-          style={{ filter: "brightness(0.45) saturate(1.2)" }}
-        >
-          <source src="https://www.pexels.com/download/video/854671/" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse at center bottom, rgba(180,60,0,0.35) 0%, rgba(0,0,0,0.7) 70%)"}} />
+        <iframe
+          src="https://www.youtube.com/embed/l0XaHWBIEvo?autoplay=1&mute=1&loop=1&playlist=l0XaHWBIEvo&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&rel=0&enablejsapi=1"
+          allow="autoplay; fullscreen"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          style={{
+            width: "calc(100vw + 200px)",
+            height: "calc(100vh + 200px)",
+            minWidth: "177.78vh",
+            minHeight: "56.25vw",
+            filter: "brightness(0.4) saturate(1.3)",
+            border: "none",
+          }}
+          title="Вечный огонь"
+        />
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse at center bottom, rgba(200,70,0,0.4) 0%, rgba(0,0,0,0.65) 65%)"}} />
       </div>
 
       <nav
